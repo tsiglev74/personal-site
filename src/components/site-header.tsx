@@ -3,36 +3,86 @@
 import Link from "next/link";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export function SiteHeader() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navigationItems = [
+    { href: "/projects", label: "Projects" },
+    { href: "/apps", label: "AI Apps" },
+    { href: "/resume", label: "Resume" },
+    { href: "/blog", label: "Blog" },
+    { href: "/privacy", label: "Privacy" },
+  ];
+
   return (
-    <header className="border-b">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-6xl flex items-center justify-between p-4">
-        <Link href="/" className="font-semibold text-lg">
-          Vlad • Personal Site
+        <Link href="/" className="font-semibold text-lg hover:text-primary transition-colors">
+          Vlad Tsigler
         </Link>
 
-        <NavigationMenu>
+        {/* Desktop Navigation */}
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-3">
-            <NavigationMenuItem>
-              <Link href="/projects" className="text-sm hover:underline">Projects</Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/apps" className="text-sm hover:underline">AI Apps</Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/resume" className="text-sm hover:underline">Resume</Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/privacy" className="text-sm hover:underline">Privacy</Link>
-            </NavigationMenuItem>
+            {navigationItems.map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <Link 
+                  href={item.href} 
+                  className="text-sm hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Button asChild size="sm">
-          <a href="https://github.com/tsiglev74" target="_blank" rel="noreferrer">GitHub</a>
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button asChild size="sm" className="hidden sm:flex">
+            <a href="https://github.com/tsiglev74" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </Button>
+          
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t bg-background">
+          <div className="px-4 py-2 space-y-1">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block px-3 py-2 text-sm hover:bg-muted rounded-md transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="pt-2 border-t">
+              <Button asChild size="sm" className="w-full">
+                <a href="https://github.com/tsiglev74" target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

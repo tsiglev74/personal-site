@@ -44,6 +44,11 @@ export function SiteHeader() {
               GitHub
             </a>
           </Button>
+          <Button asChild size="sm" className="hidden sm:flex">
+            <a href="https://www.linkedin.com/in/vlad-tsigler/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </Button>
           
           {/* Mobile Menu Button */}
           <Button
@@ -71,10 +76,15 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <div className="pt-2 border-t">
+            <div className="pt-2 border-t space-y-2">
               <Button asChild size="sm" className="w-full">
                 <a href="https://github.com/tsiglev74" target="_blank" rel="noreferrer">
                   GitHub
+                </a>
+              </Button>
+              <Button asChild size="sm" className="w-full">
+                <a href="https://www.linkedin.com/in/vlad-tsigler/" target="_blank" rel="noreferrer">
+                  LinkedIn
                 </a>
               </Button>
             </div>

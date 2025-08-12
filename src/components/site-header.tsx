@@ -19,11 +19,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-6xl flex items-center justify-between p-4">
-        <Link href="/" className="font-semibold text-lg hover:text-primary transition-colors">
-          Vlad Tsigler
-        </Link>
-
-        {/* Desktop Navigation */}
+        {/* Left spacer */}
+        <div className="w-20"></div>
+        
+        {/* Desktop Navigation - Centered */}
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-3">
             {navigationItems.map((item) => (

@@ -33,23 +33,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">
             {children}
           </main>
-          <footer className="border-t bg-muted/50">
-            <div className="mx-auto max-w-6xl p-6">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-sm text-muted-foreground">
-                  © {new Date().getFullYear()} Vlad Tsigler · Built with Next.js, Tailwind, shadcn/ui
-                </p>
-                <div className="flex gap-4 text-sm text-muted-foreground">
-                  <a href="/privacy" className="hover:text-foreground transition-colors">
-                    Privacy
-                  </a>
-                  <a href="/sitemap.xml" className="hover:text-foreground transition-colors">
-                    Sitemap
-                  </a>
-                </div>
-              </div>
-            </div>
-          </footer>
         </div>
       </body>
     </html>

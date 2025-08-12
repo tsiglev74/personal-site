@@ -4,6 +4,12 @@ const nextConfig: NextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
+  // Disable dev tools
+  devIndicators: {
+    buildActivity: false,
+    buildActivityPosition: 'bottom-right',
+  },
+  
   // Image optimization settings
   images: {
     formats: ['image/webp', 'image/avif'],

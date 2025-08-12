@@ -26,7 +26,7 @@ export default function Home() {
           <div className="flex-1 pt-2">
             <h1 className="text-4xl font-bold mb-2">Vlad Tsigler</h1>
             <p className="text-xl text-muted-foreground">
-              Marketing Analytics & AI Enthusiast
+              Marketing Analytics Professional & AI Enthusiast
             </p>
           </div>
         </div>

@@ -26,7 +26,7 @@ export default function Home() {
           <div className="flex-1 pt-2">
             <h1 className="text-4xl font-bold mb-2">Vlad Tsigler</h1>
             <p className="text-xl text-muted-foreground">
-              Data Scientist & Full-Stack Developer
+              Marketing Analytics & AI Enthusiast
             </p>
           </div>
         </div>
@@ -45,10 +45,10 @@ export default function Home() {
           </p>
           
           <p>
-            When I'm not working, I'm passionate about exploring the world through travel, discovering new cultures 
+            When I&apos;m not working, I&apos;m passionate about exploring the world through travel, discovering new cultures 
             and landscapes. I love spending time outdoors, particularly on the slopes skiing, where I find both 
             adventure and tranquility. I also enjoy cooking, experimenting with different cuisines and flavors. 
-            As a technology enthusiast, I'm constantly intrigued by innovation and emerging trends, with artificial 
+            As a technology enthusiast, I&apos;m constantly intrigued by innovation and emerging trends, with artificial 
             intelligence being a particular area of fascination for me.
           </p>
           
@@ -62,16 +62,6 @@ export default function Home() {
             ideas, and see what happens when business meets cutting-edge technology. Think of it as my digital 
             workshop where I learn by doing.
           </p>
-        </div>
-        
-        {/* Navigation Buttons */}
-        <div className="flex gap-4 justify-center flex-wrap pt-12">
-          <Button asChild size="lg">
-            <Link href="/analytics">Analytics Projects</Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/ai-projects">AI Projects</Link>
-          </Button>
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@ export function SiteHeader() {
     { href: "/", label: "Home" },
     { href: "/analytics", label: "Analytics" },
     { href: "/ai-projects", label: "AI Projects" },
+    { href: "/resume", label: "Resume" },
   ];
 
   return (

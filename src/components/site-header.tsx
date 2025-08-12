@@ -10,11 +10,9 @@ export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { href: "/projects", label: "Projects" },
-    { href: "/apps", label: "AI Apps" },
-    { href: "/resume", label: "Resume" },
-    { href: "/blog", label: "Blog" },
-    { href: "/privacy", label: "Privacy" },
+    { href: "/", label: "Home" },
+    { href: "/analytics", label: "Analytics" },
+    { href: "/ai-projects", label: "AI Projects" },
   ];
 
   return (
